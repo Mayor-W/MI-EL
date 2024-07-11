@@ -1,4 +1,4 @@
-Decomposing Spatio-Temporal Heterogeneity: Matrix-Informed Ensemble Learning for Interpretable Prediction
+**Decomposing Spatio-Temporal Heterogeneity: Matrix-Informed Ensemble Learning for Interpretable Prediction**
 
 Basic Requirements:
 python=3.7.10
