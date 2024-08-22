@@ -210,7 +210,7 @@ if __name__ == '__main__':
     d_model = 16 # dimensions of hidden layers
     max_len = XData.shape[-1] # max time step
 
-    epochs = 0
+    epochs = 40
     batch_size = 84
 
     net = STEnsembleModel(num_learners, adj_matrix, sim_matrix, eigenmaps_k, timeembeddings_k, TimeInfo, num_embeddings,
@@ -272,8 +272,6 @@ if __name__ == '__main__':
     print('————6 step————')
     testmodel6 = STEnsembleModel(num_learners, adj_matrix, sim_matrix, eigenmaps_k, 8, TimeInfo,
                                  num_embeddings, max_len, d_model, 6)
-
-    # testmodel6.load_state_dict(torch.load('weights/' + NAME + '.th'))
     testmodel6.load_state_dict(torch.load('weights/pm25/MI_EL_pm25_6step_best.th'))
     testmodel6.eval()
     test_out6 = testmodel6(Ftest6, test_indices)

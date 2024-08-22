@@ -217,7 +217,7 @@ if __name__ == '__main__':
     max_len = XData.shape[-1]  # max time step
 
     epochs = 40
-    batch_size = 80
+    batch_size = 64
 
     net = STEnsembleModel(num_learners, adj_matrix, sim_matrix, eigenmaps_k, timeembeddings_k, TimeInfo, num_embeddings,
                           max_len, d_model, num_timesteps_output)
@@ -228,7 +228,7 @@ if __name__ == '__main__':
     train_epoch_best_loss = 1000000000
     no_optim = 0  # early stop
     lr = 2e-4  # learning rate
-    NAME = 'MI_EL_traffic_12step'
+    NAME = 'MI_EL_traffic_12step2'
 
     optimizer = torch.optim.Adam(net.parameters(), lr=lr)
     loss_criterion = nn.MSELoss()
